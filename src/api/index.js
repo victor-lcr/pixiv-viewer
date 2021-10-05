@@ -137,7 +137,7 @@ const api = {
   async getRelated(id, page = 1) {
     let relatedList;
     if (!SessionStorage.has(`relatedList_${id}_p${page}`)) {
-      let res = await get("/pixiv/related", {
+      let res = await get("related", {
         id,
         page,
       });
@@ -189,7 +189,7 @@ const api = {
     let rankList;
     date = moment(date).format("YYYY-MM-DD");
     if (!SessionStorage.has(`rankList_${mode}_${date}_${page}`)) {
-      let res = await get("/pixiv/rank", {
+      let res = await get("rank", {
         mode,
         page,
         date,
@@ -235,7 +235,7 @@ const api = {
     let searchList,
       key = `searchList_${Base64.encode(word)}_${page}`;
     if (!SessionStorage.has(key)) {
-      let res = await get("/pixiv/search", {
+      let res = await get("search", {
         word,
         page,
       });
@@ -274,7 +274,7 @@ const api = {
   async getArtwork(id) {
     let artwork;
     if (!LocalStorage.has(`artwork_${id}`)) {
-      let res = await get("/pixiv/illust", {
+      let res = await get("illust", {
         id,
       });
 
@@ -310,7 +310,7 @@ const api = {
   async ugoiraMetadata(id) {
     let ugoira;
     if (!LocalStorage.has(`ugoira_${id}`)) {
-      let res = await get("/pixiv/ugoira_metadata", {
+      let res = await get("ugoira_metadata", {
         id,
       });
 
@@ -341,7 +341,7 @@ const api = {
   async getMemberInfo(id) {
     let memberInfo;
     if (!LocalStorage.has(`memberInfo_${id}`)) {
-      let res = await get("/pixiv/member", {
+      let res = await get("member", {
         id,
       });
 
@@ -370,7 +370,7 @@ const api = {
   async getMemberArtwork(id, page) {
     let memberArtwork;
     if (!LocalStorage.has(`memberArtwork_${id}_p${page}`)) {
-      let res = await get("/pixiv/member_illust", {
+      let res = await get("member_illust", {
         id,
         page,
       });
@@ -410,7 +410,7 @@ const api = {
   async getMemberFavorite(id, max_bookmark_id) {
     let memberFavorite = {};
     if (!LocalStorage.has(`memberFavorite_${id}_m${max_bookmark_id}`)) {
-      let res = await get("/pixiv/favorite", {
+      let res = await get("favorite", {
         id,
         max_bookmark_id,
       });
@@ -452,7 +452,7 @@ const api = {
   async getTags() {
     let tags;
     if (!LocalStorage.has(`tags`)) {
-      let res = await get("/pixiv/tags");
+      let res = await get("tags");
 
       if (res.trend_tags) {
         let temp = res.trend_tags;
