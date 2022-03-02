@@ -1,7 +1,7 @@
 import _axios from "axios";
 
 const axios = _axios.create({
-  baseURL: "https://api.obfs.dev/api/pixiv/",
+  baseURL: "https://victor-hibiapi.herokuapp.com/api/pixiv/",
   timeout: 12 * 1000,
   headers: { "Content-Type": "application/json" },
 });
