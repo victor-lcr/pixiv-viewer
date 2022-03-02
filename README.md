@@ -1,22 +1,21 @@
-# pixiv-viewer
-Pixiv阅览工具
+# Pixiv阅览工具
 
-## Project setup
+## 项目设置
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 开发时动态编译
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 生产环境编译
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### 修复文件
 ```
 yarn lint
 ```
