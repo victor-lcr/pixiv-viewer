@@ -16,7 +16,7 @@ const isSupportWebP = (() => {
 })();
 
 const imgProxy = (url) => {
-  let result = url.replace(/i.pximg.net/g, "pximg.obfs.dev");
+  let result = url.replace(/i.pximg.net/g, "pixiv-img.victor-egg.workers.dev");
 
   if (!isSupportWebP) {
     result = result.replace(/_10_webp/g, "_70");
